@@ -1,0 +1,29 @@
+{
+  "pages": [
+      "pages/index/index",
+      "pages/calendar/calendar"
+  ],
+  "window": {
+      "navigationBarBackgroundColor": "#333233",
+      "navigationBarTextStyle": "white",
+      "navigationBarTitleText": "天气预报",
+      "backgroundColor": "#eeeeee",
+      "backgroundTextStyle": "light",
+      "enablePullDownRefresh": true
+    },
+    "tabBar": {
+        "list": [{
+        "pagePath": "pages/index/index",
+        "text": "天气",
+        "iconPath":"public/images/weather2.png",
+        "selectedIconPath":"public/images/weather1.png"
+        },{
+        "pagePath": "pages/calendar/calendar",
+        "text": "日志",
+        "iconPath":"public/images/calendar2.png",
+        "selectedIconPath":"public/images/calendar1.png"
+        }],
+        "selectedColor":"#1296db",
+        "borderStyle":"white"
+    }
+}

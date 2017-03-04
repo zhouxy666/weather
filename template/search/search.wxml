@@ -1,0 +1,7 @@
+<template name="search">
+    <view class="search" wx:if="{{isSelected}}">
+        <icon class="search-icon" type="search" size="15" ></icon>
+        <input placeholder="请输入城市" bindblur="onBlur" bindconfirm="onConfim" focus="{{isSelected?'true':'false'}}" placeholder-class="placeholder"/>
+        <icon bindtap="onCancel" class="cancel-icon" type="cancel" size="18"></icon>
+    </view>
+</template>

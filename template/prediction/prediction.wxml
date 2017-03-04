@@ -1,0 +1,14 @@
+<template name="prediction">
+  <view class="pre-info">
+    <view class="pre-info-week">
+      <text>{{item.date}}</text>
+    </view>
+    <view class="pre-info-icon">
+      <image src="{{item.dayPictureUrl}}"></image>
+      <image src="{{item.nightPictureUrl}}"></image>
+    </view>
+    <view class="pre-info-wea">{{item.weather}}</view>
+    <view class="pre-info-wind">{{item.wind}}</view>
+    <view class="pre-info-tem">{{item.temperature}}</view>
+  </view>
+</template>

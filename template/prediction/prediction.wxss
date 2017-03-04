@@ -1,0 +1,30 @@
+.pre-info{
+    border:1px solid #52B8B8;
+    margin-right:30rpx;
+    border-radius:3px;
+    text-align: center;
+    font-size:18px;
+    padding:0 15rpx;
+}
+.pre-info .pre-info-week{
+    padding:20rpx 0 20rpx 0;
+}
+.pre-info .pre-info-icon{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.pre-info .pre-info-icon image{
+    width:90rpx;
+    height:70rpx;
+}
+.pre-info .pre-info-wea{
+    font-size:28rpx;
+    padding:10rpx 0;
+}
+.pre-info .pre-info-wind{
+    font-size:28rpx;
+}
+.pre-info .pre-info-tem{
+    font-size:28rpx;
+}

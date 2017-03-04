@@ -1,0 +1,42 @@
+<!--pages/index/index.wxml-->
+<import src="/template/prediction/prediction.wxml"/>
+<import src="/template/search/search.wxml"/>
+<import src="/template/tips/tips.wxml"/>
+<view class="container">
+    <template is="search" data="{{isSelected}}"/>
+    <view class="head" catchtap="onClick">
+        <view class="head-top">
+            <image class="head-location" src="/public/images/location1.png" catchtap="onLocation"></image>
+            <view class="tem">
+                <text class="tem-max">{{weatherData.tem}}</text>
+            </view>
+            <view class="wind">
+                <text>{{weatherData.wind}}</text>
+            </view>
+            <swiper autoplay="true" interval="3000" circular="true" style="height:192rpx">
+                <block wx:for="{{weatherData.tips}}" wx:for-index="index" wx:for-item="item" >
+                    <swiper-item>
+                        <template is="tips" data="{{item}}"/>
+                    </swiper-item>
+                </block>
+            </swiper>
+            <!--<template is="tips" data="{{weatherData}}"/>-->
+        </view>
+        <view class="city">
+            <view class="pm25">
+                <image src="/public/images/fmpm2.5.png"></image>
+                <text>{{weatherData.pm25}}</text>
+            </view>
+            <view>
+                <text>{{weatherData.currentCity}}</text>
+            </view>
+        </view>
+    </view>
+    <scroll-view scroll-x="true" style="width:100%">
+        <view class="content" catchtap="onClick">
+        <block wx:for="{{weatherData.future}}" wx:for-index="index" wx:fro-item="item">
+            <template is="prediction" data="{{item}}"/>
+        </block>
+        </view>
+    </scroll-view>
+</view>

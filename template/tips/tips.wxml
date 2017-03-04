@@ -1,0 +1,10 @@
+<template name="tips">
+    <view class="tips">
+        <view class="tips-title">
+            <text>{{item.title}}</text>
+        </view>
+        <view class="tips-des">
+            <text>{{item.des}}</text>
+        </view>
+    </view>
+</template>
