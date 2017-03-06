@@ -1,0 +1,31 @@
+.cale{
+    width:100%;
+    padding-left:10rpx;
+}
+.cale .cale-item{
+    width:90rpx;
+    height:90rpx;
+    float:left;
+    margin-right:15rpx;
+    margin-bottom:15rpx;
+    text-align:center;
+    line-height: 90rpx;
+}
+.cale .cale-item:nth-child(7){
+    margin-right: 0rpx;
+}
+
+.cale .cale-pre{
+    color:#999;
+}
+.cale .cale-cur{
+    color:#d81e06;
+}
+.cale .cale-next{
+    color:#999;
+}
+.cale .cale-today{
+    background:#d81e06;
+    border-radius: 50%;
+    color:#fff;
+}

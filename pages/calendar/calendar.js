@@ -1,46 +1,80 @@
 // pages/calendar/calendar.js
 var caleutils = require('../../utils/caleutils');
 Page({
-  data:{},
+  data:{
+  },
   onLoad:function(options){
+    var date = new Date();
+    var curYear = date.getFullYear();
+    var curMonth = date.getMonth()+1;
+    var curDay = date.getDate();
+    caleutils.getDates({
+      year:curYear,
+      month:curMonth,
+      success:function(preData,curData,nextData,dates){
+        this.setData({
+          year:curYear,
+          month:curMonth,
+          day:curDay,
+          preData:preData,
+          curData:curData,
+          nextData:nextData,
+          dates:dates
+        });
+      }.bind(this)
+    });
     wx.setNavigationBarTitle({
       title: '日历'
     });
   },
-  onReady:function(){
-    var emaptDay = [];
+  onClickToday:function(){
+    console.log(11);
+  },
+  selectDate:function(event){
+    var date = new Date();
+    var _date = event.detail.value;
+    //处理picker返回的日期
+    var year = _date.substring(0,4);
+    var month = _date.substring(5,7);
+    var curMonth = date.getMonth()+1;
+    var curYear = date.getFullYear();
+    var today = date.getDate();
+    month = !month.indexOf('0')?month.substring(1,2):month;
+    caleutils.getDates({
+      year:year,
+      month:month,
+      success:function(preData,curData,nextData,dates){
+        this.setData({
+          year:year,
+          month:month,
+          day:month==curMonth&&year==curYear?today:'',
+          preData:preData,
+          curData:curData,
+          nextData:nextData,
+          dates:dates
+        });
+      }.bind(this)
+    })
+  },
+  onClickToday:function(){
     var date = new Date();
     var curYear = date.getFullYear();
-    var curMonty = date.getMonth();
-    var y = 2017;
-    var m = 3;
-    var oneDayWeek = new Date(curYear,curMonty,1).getDay();
-    console.log(oneDayWeek);
-    for(var i = 0;i<oneDayWeek;i++){
-      emaptDay.push('');
-    }
-    console.log(emaptDay);
-    for(var i=1;i<12;i++){
-      console.log((i)+'月份:'+this.getTotalDays(2017,i));
-    }
-  },
-  /**
-   * 返回某年某月的总天数
-   */
-  getTotalDays:function(year,month){
-    //先判断是否为闰年
-    var totalDays = 0;
-      //如果是瑞年
-    switch(month){
-      case 1||3||5||7||8||10||12:
-      totalDays = 31;
-      break;
-      case 2:
-      totalDays = (caleutils.isLeapYear(year))?29:28;
-      break;
-      default:
-      totalDays = 30;
-    }
-    return totalDays;
-  },
+    var curMonth = date.getMonth()+1;
+    var curDay = date.getDate();
+    caleutils.getDates({
+      year:curYear,
+      month:curMonth,
+      success:function(preData,curData,nextData,dates){
+        this.setData({
+          year:curYear,
+          month:curMonth,
+          day:curDay,
+          preData:preData,
+          curData:curData,
+          nextData:nextData,
+          dates:dates
+        });
+      }.bind(this)
+    });
+  }
 })

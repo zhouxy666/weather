@@ -1,0 +1,7 @@
+<template name="cale">
+    <view class="cale">
+        <!--<block wx:for="{{item}}" wx:for-index="index" wx:for-item="items">-->
+            <view class="cale-item">{{item}}</view>
+        <!--</block>-->
+    </view>
+</template>
